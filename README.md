@@ -30,6 +30,14 @@ Este proyecto es una API REST desarrollada en **Spring Boot** que permite gestio
    CREATE DATABASE franquicia_db;
    GO
 
+*--* Crear la base de datos
+  ```sql
+CREATE DATABASE franquicia_db;
+GO
+
+USE franquicia_db;
+GO
+
 -- Tabla de Franquicias
 CREATE TABLE franquicias (
     id INT PRIMARY KEY IDENTITY(1,1),
@@ -55,6 +63,8 @@ CREATE TABLE productos (
     FOREIGN KEY (sucursal_id) REFERENCES sucursales(id)
 );
 GO
+
+
 
 ## ⚙️ Configurar la conexión a la base de datos
 
