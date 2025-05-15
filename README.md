@@ -11,6 +11,13 @@ Este proyecto es una API REST desarrollada en **Spring Boot** que permite gestio
 - Docker (opcional, para contenerización)
 
 ---
+## ✅ Construir la imagen
+
+docker build -t mi-springboot-app .
+
+## Ejecutar la imagen
+
+docker run --rm -p 8080:8080 mi-springboot-app
 
 ## ⚙️ Instalación local
 
@@ -76,3 +83,15 @@ spring.jpa.hibernate.ddl-auto=none
 4. Ejecutar la aplicación
 
 ./mvnw spring-boot:run
+
+📌 Endpoints principales
+Método	Endpoint	Descripción
+POST	/franquicias	Crear una nueva franquicia
+POST	/franquicias/{id}/sucursales	Agregar una sucursal a una franquicia
+POST	/franquicias/{franquiciaId}/sucursales/{sucursalId}/productos	Agregar producto a sucursal
+DELETE	/franquicias/{franquiciaId}/sucursales/{sucursalId}/productos/{productoId}	Eliminar un producto
+PUT	/franquicias/{franquiciaId}/sucursales/{sucursalId}/productos/{productoId}/stock	Modificar stock de un producto
+GET	/franquicias/{franquiciaId}/productos-con-mas-stock	Obtener productos con más stock por sucursal
+PUT	/franquicias/{id}	Actualizar nombre de una franquicia
+PUT	/sucursales/{id}	Actualizar nombre de una sucursal
+PUT	/productos/{id}	Actualizar nombre de un producto
